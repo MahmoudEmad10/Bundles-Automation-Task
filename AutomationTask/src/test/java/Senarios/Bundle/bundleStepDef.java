@@ -1,28 +1,15 @@
-package StepDefinitions;
+package Senarios.Bundle;
 
-import TestBase.Base;
-import cucumber.api.PendingException;
-import cucumber.api.java.After;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import Pages.bundleScreen;
+
+import DriverFactory.DriverFactory;
+import Pages.BundleScreen;
+import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
-
 import java.util.Objects;
 
-public class MyStepdefs extends bundleScreen {
+public class bundleStepDef {
 
-
-    @Given("^User open bundles page$")
-    public void userOpenBundlesPage() {
-        Base.launch();
-    }
+    BundleScreen bundleScreen = new BundleScreen(DriverFactory.getDriver());
 
     @When("current country is KSA")
     public void currentCountryIs() {
@@ -61,7 +48,6 @@ public class MyStepdefs extends bundleScreen {
             Assert.assertEquals(price, actualPricePremiumcBundle[0]);
             Assert.assertEquals(currency, actualCurrencyPremiumBundle[1]);
         }
-        Base.close();
     }
 
     @When("^selecting a \"([^\"]*)\"$")

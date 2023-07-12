@@ -2,7 +2,6 @@ Feature: Bundles
 
 
   Scenario Outline: Validation on Lite bundle for KSA country
-    Given User open bundles page
     When selecting a "<country>"
     Then Type of the bundle should be "<Type>" and price should be "<Price>" and currency should be "<Currency>"
     Examples:
@@ -11,7 +10,7 @@ Feature: Bundles
 
 
   Scenario Outline: Validation on classic bundle for KSA country
-    Given User open bundles page
+    ## Given User open bundles page
     When selecting a "<country>"
     Then Type of the bundle should be "<Type>" and price should be "<Price>" and currency should be "<Currency>"
     Examples:
@@ -19,7 +18,7 @@ Feature: Bundles
       | CLASSIC | 25    | SAR/month | KSA     |
 
   Scenario Outline: Validation on premium bundle for KSA country
-    Given User open bundles page
+    ## Given User open bundles page
     When selecting a "<country>"
     Then Type of the bundle should be "<Type>" and price should be "<Price>" and currency should be "<Currency>"
     Examples:
@@ -27,7 +26,7 @@ Feature: Bundles
       | PREMIUM | 60    | SAR/month | KSA     |
 
   Scenario Outline: Validation on Lite bundle for Bahrain country
-    Given User open bundles page
+    ## Given User open bundles page
     When selecting a "<country>"
     Then Type of the bundle should be "<Type>" and price should be "<Price>" and currency should be "<Currency>"
     Examples:
@@ -35,7 +34,7 @@ Feature: Bundles
       | LITE | 2     | BHD/month | Bahrain |
 
   Scenario Outline: Validation on classic bundle for Bahrain country
-    Given User open bundles page
+    ## Given User open bundles page
     When selecting a "<country>"
     Then Type of the bundle should be "<Type>" and price should be "<Price>" and currency should be "<Currency>"
     Examples:
@@ -44,7 +43,7 @@ Feature: Bundles
 
 
   Scenario Outline: Validation on premium bundle for Bahrain country
-    Given User open bundles page
+    ## Given User open bundles page
     When selecting a "<country>"
     Then Type of the bundle should be "<Type>" and price should be "<Price>" and currency should be "<Currency>"
     Examples:
@@ -52,7 +51,7 @@ Feature: Bundles
       | PREMIUM | 6     | BHD/month | Bahrain |
 
   Scenario Outline: Validation on Lite bundle for kuwait country
-    Given User open bundles page
+    ## Given User open bundles page
     When selecting a "<country>"
     Then Type of the bundle should be "<Type>" and price should be "<Price>" and currency should be "<Currency>"
     Examples:
@@ -60,7 +59,7 @@ Feature: Bundles
       | LITE | 1.2   | KWD/month | Kuwait  |
 
   Scenario Outline: Validation on classic bundle for kuwait country
-    Given User open bundles page
+    ## Given User open bundles page
     When selecting a "<country>"
     Then Type of the bundle should be "<Type>" and price should be "<Price>" and currency should be "<Currency>"
     Examples:
@@ -68,7 +67,7 @@ Feature: Bundles
       | CLASSIC | 2.5   | KWD/month | Kuwait  |
 
   Scenario Outline: Validation on premium bundle for kuwait country
-    Given User open bundles page
+    ## Given User open bundles page
     When selecting a "<country>"
     Then Type of the bundle should be "<Type>" and price should be "<Price>" and currency should be "<Currency>"
     Examples:
