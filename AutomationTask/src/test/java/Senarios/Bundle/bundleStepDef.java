@@ -11,15 +11,6 @@ public class bundleStepDef {
 
     BundleScreen bundleScreen = new BundleScreen(DriverFactory.getDriver());
 
-    @When("current country is KSA")
-    public void currentCountryIs() {
-        bundleScreen.clickOnCurrentCountry();
-        String actualCountry = bundleScreen.getCurrentCountry().getText();
-        String expectedCountry = "KSA";
-        Assert.assertEquals(expectedCountry, actualCountry);
-        bundleScreen.clickOnCurrentCountry();
-    }
-
     @Then("^Type of the bundle should be \\\"(.*?)\\\" and price should be \\\"(.*?)\\\" and currency should be \\\"(.*?)\\\"$")
     public void typeOfTheBundleShouldBeTypeAndPriceShouldBePriceAndCurrencyShouldBeCurrency(String type, String price, String currency) {
 
@@ -50,15 +41,24 @@ public class bundleStepDef {
         }
     }
 
-    @When("^selecting a \"([^\"]*)\"$")
+    @Given("^selecting a \"([^\"]*)\"$")
     public void selectingCountry(String country) {
 
         if (Objects.equals(country, "KSA")) {
             bundleScreen.selectKsaCountry();
+            String actualCountry = bundleScreen.getCurrentCountry().getText();
+            String expectedCountry = "KSA";
+            Assert.assertEquals(expectedCountry, actualCountry);
         } else if (Objects.equals(country, "Bahrain")) {
             bundleScreen.selectBahrainCountry();
+            String actualCountry = bundleScreen.getCurrentCountry().getText();
+            String expectedCountry = "Bahrain";
+            Assert.assertEquals(expectedCountry, actualCountry);
         } else if (Objects.equals(country, "Kuwait")) {
             bundleScreen.selectKuwaitCountry();
+            String actualCountry = bundleScreen.getCurrentCountry().getText();
+            String expectedCountry = "Kuwait";
+            Assert.assertEquals(expectedCountry, actualCountry);
         }
 
     }
